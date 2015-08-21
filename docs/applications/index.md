@@ -12,7 +12,9 @@ categories:
  - containers
  - game-servers
  - media-servers
+ - salt
  - messaging
  - development
+ - configuration-management
  - project-management
 ---
