@@ -3,13 +3,13 @@ deprecated: true
 author:
   name: Linode
   email: docs@linode.com
-description: 'Setting up an email and groupware server using Citadel on an Ubuntu 9.04 (Jaunty) Linode VPS.'
+description: 'Setting up an email and groupware server using Citadel on an Ubuntu 9.04 (Jaunty) Linode.'
 keywords: 'citadel,ubuntu 9.04 mail server,groupware,email server,email howto'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['email/citadel/ubuntu-9-04-jaunty/']
 modified: Tuesday, May 17th, 2011
 modified_by:
-  name: Amanda Folson
+  name: Linode
 published: 'Monday, November 9th, 2009'
 title: 'Email with Citadel on Ubuntu 9.04 (Jaunty)'
 ---
@@ -58,18 +58,18 @@ If you're unsure of which timezone to use, you may wish to set this to your time
 
 ### Set the Hostname
 
-You'll also need to set the hostname for your system. This can be any name you like, but it should be something that you will remember. In this example, the machine will be named "squire".
+You'll also need to set the hostname for your system. This can be any name you like, but it should be something that you will remember. In this example, the machine will be named "username".
 
-    echo "squire" > /etc/hostname
+    echo "username" > /etc/hostname
     hostname -F /etc/hostname
 
-Now you will need to configure your Linode so that it associates its hostname with its public IP address. Edit the `/etc/hosts` file so that the first section resembles the following example. Replace `12.34.56.78` and `squire.example.com` with your Linode's public IP and FQDN (name.domain.com).
+Now you will need to configure your Linode so that it associates its hostname with its public IP address. Edit the `/etc/hosts` file so that the first section resembles the following example. Replace `12.34.56.78` and `username.example.com` with your Linode's public IP and FQDN (name.domain.com).
 
 {: .file }
 /etc/hosts
 :   ~~~
     127.0.0.1 localhost.localdomain localhost
-    12.34.56.78 squire.example.com squire
+    12.34.56.78 username.example.com username
     ~~~
 
 You're now ready to begin installing Citadel!
@@ -93,7 +93,7 @@ Edit the `/etc/mailname` file to reflect your system's domain name:
 {: .file }
 /etc/mailname
 :   ~~~
-    squire.example.com
+    username.example.com
     ~~~
 You'll need to edit the SpamAssassin configuration file to enable spamd:
 
@@ -127,7 +127,7 @@ Use the following startup script to initialize Citadel.
 
 Visit the web interface in your Web browser. Using our preceding example, the Web address to visit would look like:
 
-    https://squire.example.com
+    https://username.example.com
 
 The SSL certificate for your Citadel web interface will be self-signed; accept it to continue. If you don't get a login page in your web browser, you may need to start "webcit" with the following command:
 

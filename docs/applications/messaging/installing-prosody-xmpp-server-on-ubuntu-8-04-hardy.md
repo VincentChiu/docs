@@ -5,7 +5,7 @@ author:
   email: docs@linode.com
 description: 'Installation and basic usage guide for Prosody, a lightweight XMPP server on Ubuntu 8.04 (Hardy)'
 keywords: 'prosody,prosody ubuntu hardy,prosody.im,xmpp,real time messaging,lua'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['communications/xmpp/prosody/ubuntu-8-04-hardy/']
 modified: Friday, April 29th, 2011
 modified_by:
@@ -124,7 +124,7 @@ To ensure that your Prosody instance will federate properly with the rest of the
 2.  Service: `_xmpp-client` Protocol: TCP Port: 5222
 3.  Service: `_jabber` Protocol: TCP Port: 5269
 
-The "target" of the SRV record should point to the publicly routable hostname for that machine (e.g. "squire.example.com"). The priority and weight should both be set to `0`.
+The "target" of the SRV record should point to the publicly routable hostname for that machine (e.g. "username.example.com"). The priority and weight should both be set to `0`.
 
 Enabling Components
 -------------------

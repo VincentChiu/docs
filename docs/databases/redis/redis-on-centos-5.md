@@ -1,20 +1,21 @@
 ---
+deprecated: true
 author:
   name: Linode
   email: docs@linode.com
 description: 'Deploy applications that depend on the high performance key-value store Redis.'
 keywords: 'redis centos 5,redis,nosql,database,key-value store'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['databases/redis/centos-5/']
 modified: Sunday, July 7th, 2013
 modified_by:
-  name: Amanda Folson
+  name: Linode
 published: 'Thursday, August 5th, 2010'
 title: Redis on CentOS 5
 external_resources:
  - '[Redis Project Home Page](http://redis.io/)'
  - '[Redis Configuration](http://redis.io/topics/config)'
- - '[Redis Data Durability](http://redis.io/wiki/AppendOnlyFileHowto)'
+ - '[Redis Data Durability](https://redis-docs.readthedocs.org/en/latest/AppendOnlyFileHowto.html)'
  - '[Redis Command Reference](http://redis.io/commands)'
 ---
 

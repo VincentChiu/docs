@@ -4,7 +4,7 @@ author:
   email: docs@linode.com
 description: 'Instructions for backing up MySQL databases using various methods.'
 keywords: 'mysql,backup,mysqldump'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['databases/mysql/backup-options/']
 modified: Wednesday, September 11th, 2013
 modified_by:
@@ -20,6 +20,8 @@ external_resources:
 ---
 
 MySQL is an open source relational database management system (DBMS) which is frequently deployed in a wide assortment of contexts. Most frequently it is deployed as part of the [LAMP Stack](/docs/lamp-guides). The database system is also easy to use and highly portable and is, in the context of many applications, extremely efficient. As MySQL is often a centralized data store for large amounts of mission critical data, making regular backups of your MySQL database is one of the most important disaster recovery tasks a system administrator can perform. This guide addresses a number of distinct methods for creating back ups of your database as well as restoring databases from backups.
+
+![Back Up Your MySQL Databases](/docs/assets/back_up_your_mysql-databases.png "Back Up Your MySQL Databases")
 
 Before beginning the installation process, we assume you've followed the steps outlined in our [getting started guide](/docs/getting-started/). Additionally, you will need to install the [MySQL Database](/docs/databases/mysql/). All configuration will be performed in a terminal session; make sure you're logged into your Linode as root via SSH. If you're new to Linux server administration you may be interested in our [introduction to Linux concepts guide](/docs/tools-reference/linux-users-and-groups/), [beginner's guide](/docs/beginners-guide/) and [administration basics guide](/docs/using-linux/administration-basics).
 
@@ -89,7 +91,7 @@ In many cases, creating a back up of the entire database server isn't required. 
 
 When possible, use the `mysqldump` tool to export a "dump" of a single database. This command will resemble the following:
 
-    mysqldump -u squire -ps3cr1t -h localhost danceLeaders > 1266861650-danceLeaders.sql
+    mysqldump -u username -ps3cr1t -h localhost danceLeaders > 1266861650-danceLeaders.sql
 
 The above example is like the example in the previous section, except rather than using the `--all-databases` option, this example specifies a particular database name. In this case we create a back up of the `danceLeaders` database. The form of this command, in a more plain notation is as follows:
 
@@ -105,9 +107,9 @@ You will be prompted for a password before `mysqldump` begins it's backup proces
 
 ### Option 1: Create Backups of a Single Table Using the mysqldump Utility
 
-This operation, like previous uses of the `mysqldump` utility in this document, allows you to create a backup of a single database table. Continuing our earlier examples the following example allows you to back up the table `squireRecords` in the `danceLeaders` database.
+This operation, like previous uses of the `mysqldump` utility in this document, allows you to create a backup of a single database table. Continuing our earlier examples the following example allows you to back up the table `usernameRecords` in the `danceLeaders` database.
 
-     mysqldump -u squire -ps3cr1t -h localhost danceLeaders squireRecords \> 1266861650-danceLeaders-squireRecords.sql
+     mysqldump -u username -ps3cr1t -h localhost danceLeaders usernameRecords \> 1266861650-danceLeaders-usernameRecords.sql
 
 The above example is like the example in the previous section, except that we've added a table name specification to the command to specify the name of the table that we want to back up. The form of this command in a more plain notation is as follows:
 

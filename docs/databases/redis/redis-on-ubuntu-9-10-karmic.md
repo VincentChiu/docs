@@ -5,7 +5,7 @@ author:
   email: docs@linode.com
 description: 'Deploy applications that depend on the high performance key-value store Redis.'
 keywords: 'redis ubuntu 9.10,redis lucid,nosql,database,key-value store'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['databases/redis/ubuntu-9-10-karmic/']
 modified: Friday, April 29th, 2011
 modified_by:
@@ -194,7 +194,7 @@ You may wish to consult the following resources for additional information on th
 
 - [Redis Project Home Page](http://redis.io/)
 - [Redis Configuration](http://redis.io/topics/config)
-- [Redis Data Durability](http://redis.io/wiki/AppendOnlyFileHowto)
+- [Redis Data Durability](https://redis-docs.readthedocs.org/en/latest/AppendOnlyFileHowto.html)
 - [Redis Command Reference](http://redis.io/commands)
 
 

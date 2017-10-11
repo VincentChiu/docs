@@ -5,7 +5,7 @@ author:
   email: docs@linode.com
 description: 'Mango publishes markdown documents from plain text files into a dynamic website.'
 keywords: 'markdown,content management systems,cms,plain text'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['web-applications/cms-guides/mango/fedora-14/']
 modified: Wednesday, October 2nd, 2013
 modified_by:
@@ -122,7 +122,7 @@ Create a `VirtualHost` specification based on the following example:
     <VirtualHost *:80>
        ServerName example.com
        ServerAlias www.example.com
-       ServerAdmin squire@example.com
+       ServerAdmin username@example.com
 
        DocumentRoot /srv/www/example.com/public_html
 

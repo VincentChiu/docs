@@ -4,7 +4,7 @@ author:
   email: docs@linode.com
 description: 'OSQA provides an advanced knowledge exchange system for vibrant communities.'
 keywords: 'knowledge exchange,question and answers,q&a,debian lenny'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['web-applications/social-networking/osqa/']
 modified: Friday, October 4th, 2013
 modified_by:
@@ -49,7 +49,7 @@ Additionally, OSQA uses the Sphinx search engine tool, which is unfortunately no
 
 The `checkinstall` command will ask you a number of questions regarding the package you are building. `checkinstall` will allow you to modify ten possible options concerning your application. We recommend naming this package `sphinxsearch` to avoid overlapping with other packages for different software in Debian. Other modifications can be made at your discretion. When complete, `checkinstall` will generate the following output. Press enter, when you have completed this process:
 
-    0 - Maintainer: [ squire@example.com ]
+    0 - Maintainer: [ username@example.com ]
     1 - Summary: [ Sphinx is a full-text search engine. ]
     2 - Name: [ sphinxsearch2 ]
     3 - Version: [ 0.9.9 ]
@@ -114,7 +114,7 @@ Edit the newly created `/srv/www/example.com/osqa/settings_local.py` and set the
 settings\_local.py
 :   ~~~ python
     DATABASE_NAME = 'osqa'                  # Or path to database file if using sqlite3.
-    DATABASE_USER = 'squire'                # Not used with sqlite3.
+    DATABASE_USER = 'username'                # Not used with sqlite3.
     DATABASE_PASSWORD = '5t1ck'             # Not used with sqlite3.
     DATABASE_ENGINE = 'mysql'               # mysql, ext.
     ~~~

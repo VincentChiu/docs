@@ -4,7 +4,7 @@ author:
   email: docs@linode.com
 description: 'Using cron to run programs at specified times on your Linux server.'
 keywords: 'cron,cron tutorial,crontab,cron linux,administration,linux,systems,automation'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['linux-tools/utilities/cron/']
 modified: Tuesday, May 17th, 2011
 modified_by:
@@ -22,6 +22,8 @@ Since `cron` is a standard component of modern Linux systems, this documentation
 
 Before we get started, there are a couple of terms associated with `cron` that are non-obvious. First, the job or **cronjob** refers to the task, script, or application that `cron` runs. Second, **crontab** refers to each user's list of cronjobs.
 
+![Title graphic](/docs/assets/schedule_tasks_with_cron_smg.png)
+
 ## Using crontab
 
 To see a listing of the current user's cronjobs, issue the following command:
@@ -30,8 +32,8 @@ To see a listing of the current user's cronjobs, issue the following command:
 
 This will produce, as standard output, something that resembles the following:
 
-    */20 * * * * /home/squire/bin/rebuild-dns-zones
-    */40 * * * * /home/squire/bin/delete-session-files >/dev/null 2>&1
+    */20 * * * * /home/username/bin/rebuild-dns-zones
+    */40 * * * * /home/username/bin/delete-session-files >/dev/null 2>&1
     */10 * * * * rm /srv/example.com/app/session/*
 
 In this example, `cron`:
@@ -114,7 +116,7 @@ These `cronjobs` will both run at 12:01am (`1 0`). The `cal-update-daily` job wi
 {: .file-excerpt }
 crontab
 
-> */20* \* \* \* /home/squire/bin/rebuild-dns-zones 30 */2* \* \* /opt/bin/backup-static-files 0 \* \* \* \* /opt/bin/compress-static-files @hourly /opt/bin/compress-static-files
+> */20* \* \* \* /home/username/bin/rebuild-dns-zones 30 */2* \* \* /opt/bin/backup-static-files 0 \* \* \* \* /opt/bin/compress-static-files @hourly /opt/bin/compress-static-files
 
 In the first example, the `rebuild-dns-zones` script is run every twenty minutes. In the second example, the `backup-static-files` program is run at 30 past the hour, (i.e. the "bottom of the hour") every other hour. In the final *two* examples, the `compress-static-files` script is run at the beginning of *every* hour.
 

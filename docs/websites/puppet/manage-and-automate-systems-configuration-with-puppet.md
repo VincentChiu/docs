@@ -4,7 +4,7 @@ author:
   email: docs@linode.com
 description: 'Use Puppet for configuration change management.'
 keywords: 'puppet,puppet configuration,puppet linux,configuration change management,server automation'
-license: '[CC BY-ND 3.0](http://creativecommons.org/licenses/by-nd/3.0/us/)'
+license: '[CC BY-ND 4.0](https://creativecommons.org/licenses/by-nd/4.0)'
 alias: ['application-stacks/puppet/automation/']
 modified: Monday, August 22nd, 2011
 modified_by:
@@ -138,12 +138,12 @@ As above, the `default` node provides a space to specify the configuration for a
     node 'lb1.example.com' inherits loadbalancer {
     }
 
-    node 'lollipop.example.com' inherits appserverbasic {
+    node 'hostname.example.com' inherits appserverbasic {
         include monitoring
         include backups
     }
 
-    node 'test.lollipop.example.com' inherits appserverbasic {
+    node 'test.hostname.example.com' inherits appserverbasic {
     }
 
     node 'monitoring1.example.com', 'monitoring2.example.com' {
@@ -234,7 +234,7 @@ Puppet attempts to normalize the way administrators interact with all resources,
 File Path
 :   ~~~
     exec {"rsync_config":
-        command => "/usr/bin/rsync -a squire@lollipop.example.com:/srv/puppet/www-config /opt/config",
+        command => "/usr/bin/rsync -a username@hostname.example.com:/srv/puppet/www-config /opt/config",
         unless => "/bin/test -e /opt/config/fresh",
     }
     ~~~
