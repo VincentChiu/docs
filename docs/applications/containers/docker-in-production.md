@@ -15,6 +15,7 @@ contributor:
   link: https://twitter.com/bobstrecansky
   external_resources:
 - '[Docker](https://www.docker.com/)'
+
 ---
 
 Docker is becoming increasingly popular among software developers, operators and enterprises as a software container platform. Containers package software in a format that can run isolated on a shared operating system. Bundled with only essential libraries and settings, Docker renders lightweight, efficient self-contained systems that run identically wherever deployed.
