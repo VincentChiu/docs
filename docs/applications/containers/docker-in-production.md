@@ -18,16 +18,16 @@ contributor:
 
 ---
 
-
-
 {: .note}
 > The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/docs/tools-reference/linux-users-and-groups) guide.
 
+## Disclaimer
 
+This guide uses well-tested packages for Production (Ubuntu 16.04 LTS for the Docker Host, Docker Community Edition as the Docker package, and Ubuntu 16.04 LTS for the base container, 
 
-##Installation
+##Initial Steps
 
-1.  Install Docker using the [Linode Docker Installation Guide](https://www.linode.com/docs/applications/containers/how-to-install-docker-and-pull-images-for-container-deployment)  It is extremely prudent that you use a consistent docker version across the nodes that are going to run your Docker containers.
+1.  Install Docker using the [Linode Docker Installation Guide](https://www.linode.com/docs/applications/containers/how-to-install-docker-and-pull-images-for-container-deployment) on the hosts that you're planning on running Docker on.  It is extremely prudent that you use a consistent docker version across the nodes that are going to run your Docker containers (the guide listed above uses Docker CE (Community Edition) which is a good choice from a stability perspective).
 
 2.  Determine a base Docker image strategy that you'd like to use for your web application or site.  If you determine that you'd like to use the latest Ubuntu LTS version, then follow along below with Using the Latest Ubuntu LTS Image.  If you want to make sure that you have a deployment that maintains the same OS underneath, you can use the Creating a Private Docker Registry section below.  This decision is a tradeoff - If the website or web application you are developing is unlikely to stop functioning with an OS upgrade, then it's extremely advantageous to utilize an image that is maintained by Ubuntu, both from a performance and a security perspective.  If you decide that you'd like to maintain your own underlying operating system, make sure you often update the base image that you choose so that you get the latest (security patched) versions of OS level packages.
 
