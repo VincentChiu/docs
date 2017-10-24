@@ -18,7 +18,7 @@ contributor:
 
 ---
 
-Docker is becoming increasingly popular among software developers, operators and enterprises as a software container platform. Containers package software in a format that can run isolated on a shared operating system. Bundled with only essential libraries and settings, Docker renders lightweight, efficient self-contained systems that run identically wherever deployed.
+
 
 {: .note}
 > The steps in this guide require root privileges. Be sure to run the steps below as `root` or with the `sudo` prefix. For more information on privileges, see our [Users and Groups](/docs/tools-reference/linux-users-and-groups) guide.
@@ -27,6 +27,24 @@ Docker is becoming increasingly popular among software developers, operators and
 
 ##Installation
 
-1.  Install Docker:
+1.  Install Docker using the [Linode Docker Installation Guide](https://www.linode.com/docs/applications/containers/how-to-install-docker-and-pull-images-for-container-deployment)  It is extremely prudent that you use a consistent docker version across the nodes that are going to run your Docker containers.
+
+2.  Determine a base Docker image strategy that you'd like to use for your web application or site.  If you determine that you'd like to use the latest Ubuntu LTS version, then follow along below with Using the Latest Ubuntu LTS Image.  If you want to make sure that you have a deployment that maintains the same OS underneath, you can use the Creating a Private Docker Registry section below.  This decision is a tradeoff - If the website or web application you are developing is unlikely to stop functioning with an OS upgrade, then it's extremely advantageous to utilize an image that is maintained by Ubuntu, both from a performance and a security perspective.  If you decide that you'd like to maintain your own underlying operating system, make sure you often update the base image that you choose so that you get the latest (security patched) versions of OS level packages.
+
+
+3.  Validate that you're running the current LTS kernel on your platform, this will ensure that you have as few driver issues as possible.  At the time of writing, Ubuntu 16.04 is using ai4.10.0-37-generic #41~16.04.1-Ubuntu SMP kernel.  You can find this with
+`uname -a`
+
+## Using the Latest Ubuntu LTS Image:
+docker pull ubuntu:latest
+
+Dockerfile:
+`from ubuntu:latest`
+
+## Creating a Priate Docker Registry:
+1.  Create a [Private Docker Registry](https://docs.docker.com/registry/deploying/) in order to maintain your own private docker container images.  You'll want to configure a registry such as the one []
+
+2.  Come up with a process to clean old Docker images, as the old containers tend to take up lots of disk space with no utilization.
+    `docker images -q -a | xargs --no-run-if-empty docker rmi`
 
 
